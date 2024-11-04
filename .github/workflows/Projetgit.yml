@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: send email notif
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "Notification: Push to main branch"
+          body: "une action sur le projet ."
+          from: "juniorembolo99@gmail.com"
+          to: "Darylwilliam25@gmail.com"
+          secure: true
+
+
+  
