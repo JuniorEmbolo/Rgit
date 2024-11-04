@@ -1,0 +1,27 @@
+name: Send Email Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.juniorembolo99@gmail.com }}  # Votre adresse e-mail
+          password: ${{ secrets.juniorphoenix07059 }}  # Mot de passe d'application
+          subject: "Notification: Push to main branch"
+          body: "Une action a été réalisée sur le projet."
+          from: "juniorembolo99@gmail.com"  # Votre adresse e-mail
+          to: "Darylwilliam25@gmail.com"  # Destinataire
+          secure: true
