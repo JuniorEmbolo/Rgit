@@ -1,44 +1,102 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Couleur de fond */
     margin: 0;
     padding: 20px;
+    transition: background-color 0.5s; /* Transition pour le changement de couleur */
 }
 
 .container {
     max-width: 400px;
     margin: auto;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    transition: box-shadow 0.3s; /* Transition pour l'ombre */
+}
+
+.container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Ombre au survol */
 }
 
 h1 {
     text-align: center;
+    color: #007bff; /* Couleur du titre */
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
 }
 
 input[type="text"] {
     width: 70%;
     padding: 10px;
     margin: 5px 0;
+    border: 1px solid #007bff; /* Bordure colorée */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Transition pour la bordure */
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3; /* Bordure plus foncée au focus */
+    outline: none; /* Retirer l'outline par défaut */
 }
 
 button {
-    padding: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Couleur du bouton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transitions pour le bouton */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ddd; /* Bordure de la liste */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s; /* Transition pour le fond des éléments */
+}
+
+li:hover {
+    background-color: #f1f1f1; /* Fond au survol */
 }
 
 li.completed {
     text-decoration: line-through;
     color: gray;
+}
+
+li button {
+    background-color: #dc3545; /* Couleur du bouton de suppression */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition pour le bouton de suppression */
+}
+
+li button:hover {
+    background-color: #c82333; /* Couleur au survol du bouton de suppression */
 }
